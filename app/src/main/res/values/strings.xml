@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">GroupExpenseManagement</string>
+    <string name="app_name">Group Spending</string>
+    <string name="status">Loading...</string>
+    <string name="button_download">Login</string>
 </resources>

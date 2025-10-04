@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="text_size_snapvid_home">34sp</dimen>
+
+    <dimen name="logo_ads_height">35dp</dimen>
+    <dimen name="logo_ads_width">92.1dp</dimen>
+
+    <dimen name="very_large_lv2">100dp</dimen>
+    <dimen name="very_large">40dp</dimen>
+    <dimen name="medium_large_lv2">35dp</dimen>
+    <dimen name="medium_large">30dp</dimen>
+    <dimen name="more_large">25dp</dimen>
+    <dimen name="large">20dp</dimen>
+    <dimen name="small">10dp</dimen>
+    <dimen name="tiny">5dp</dimen>
+    <dimen name="medium_tiny">3dp</dimen>
+    <dimen name="super_tiny">1dp</dimen>
+    <dimen name="medium">15dp</dimen>
+    <dimen name="between_med_lar">17dp</dimen>
+    <dimen name="between_small_medium">11dp</dimen>
+    <dimen name="between_tiny_small">7dp</dimen>
+    <dimen name="corner_radius_home">10dp</dimen>
+
+
+
+
+    <dimen name="size_of_icon_paste">10dp</dimen>
+    <dimen name="height_search_box">45dp</dimen>
+
+    <dimen name="layout_width_0">0dp</dimen>
+    <dimen name="layout_weight_1">1</dimen>
+
+
+    <dimen name="tiny_icon">15dp</dimen>
+    <dimen name="small_icon">20dp</dimen>
+    <dimen name="medium_icon">25dp</dimen>
+    <dimen name="bigger_icon">30dp</dimen>
+    <dimen name="larger_icon">40dp</dimen>
+
+    <dimen name="big_text">20sp</dimen>
+    <dimen name="more_big_text">22sp</dimen>
+    <dimen name="small_text">13sp</dimen>
+    <dimen name="tiny_text">12sp</dimen>
+    <dimen name="medium_text">15sp</dimen>
+    <dimen name="medium_lv2_text">16sp</dimen>
+    <item name="corner_avatar" type="dimen">50%</item>
+
+
+    <dimen name="big_button_download">60dp</dimen>
+    <dimen name="layout_height_1">1dp</dimen>
+    <dimen name="layout_width_thumbnail">90dp</dimen>
+    <dimen name="layout_height_thumbnail">115dp</dimen>
+    <dimen name="zero">0dp</dimen>
+    <dimen name="text_between_small_medium">12sp</dimen>
+    <dimen name="width_items_video">150dp</dimen>
+    <dimen name="height_items_video">188dp</dimen>
+    <dimen name="height_items_list_video">70dp</dimen>
+    <dimen name="width_items_list_video">100dp</dimen>
+    <dimen name="line_width">150dp</dimen>
+    <dimen name="line_text">1</dimen>
+    <dimen name="super_large">55dp</dimen>
+    <dimen name="margin_top_splash_screen">200dp</dimen>
+    <dimen name="button_corner_radius">20dp</dimen>
+    <item name="alpha_ic" type="dimen" format="float">0.5</item>
+
+    <item name="letter_spacing_button" type="dimen" format="float">-0.016</item>
+</resources>
