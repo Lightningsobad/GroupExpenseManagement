@@ -25,9 +25,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
         <activity android:name="com.exercise.groupexpensemanagement.ui.login.LoginActivity"
             android:exported="true"/>
+
+        <activity android:name=".ui.main.MainScreenActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MainScreen"/>
     </application>
 
 </manifest>

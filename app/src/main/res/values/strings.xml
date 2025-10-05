@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">Group Spending</string>
     <string name="status">Loading...</string>
-    <string name="button_download">Login</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="hint_text">Email or Username</string>
+    <string name="hint_text_2">Password</string>
+    <string name="forgot">FORGOT PASSWORD</string>
+    <string name="or">Or</string>
+    <string name="google">CONTINUE WITH GOOGLE</string>
+    <string name="facebook">CONTINUE WITH FACEBOOK</string>
+    <string name="option_register">Do not have an account?</string>
+    <string name="register">Register here</string>
 </resources>
