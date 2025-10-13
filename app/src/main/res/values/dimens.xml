@@ -53,15 +53,18 @@
     <dimen name="layout_height_thumbnail">115dp</dimen>
     <dimen name="zero">0dp</dimen>
     <dimen name="text_between_small_medium">12sp</dimen>
-    <dimen name="width_items_video">150dp</dimen>
+    <dimen name="big_margin_top">150dp</dimen>
     <dimen name="height_items_video">188dp</dimen>
     <dimen name="height_items_list_video">70dp</dimen>
     <dimen name="width_items_list_video">100dp</dimen>
     <dimen name="line_width">150dp</dimen>
     <dimen name="line_text">1</dimen>
     <dimen name="super_large">55dp</dimen>
+    <dimen name="super_large_2">50dp</dimen>
+    <dimen name="super_large_lv2">60dp</dimen>
     <dimen name="margin_top_splash_screen">200dp</dimen>
     <dimen name="button_corner_radius">20dp</dimen>
+    <dimen name="btn_login_width">265dp</dimen>
     <item name="alpha_ic" type="dimen" format="float">0.5</item>
 
     <item name="letter_spacing_button" type="dimen" format="float">-0.016</item>

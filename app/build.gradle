@@ -47,4 +47,9 @@ dependencies {
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.auth)
 
+
+    implementation libs.recyclerview
+    implementation libs.glide // Replace with the latest stable version
+    annotationProcessor libs.compiler // Replace with the same version as glide
+
 }

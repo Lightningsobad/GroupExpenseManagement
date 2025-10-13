@@ -5,8 +5,8 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/fragment_dashboard">
 
-    <fragment android:id="@+id/fragment_dashboard" android:name="com.exercise.groupexpensemanagement.ui.dashboad.DashboardFragment" tools:layout="@layout/dashboad_fragment"/>
-    <fragment android:id="@+id/fragment_member" android:name="com.exercise.groupexpensemanagement.ui.member.MemberFragment" tools:layout="@layout/member_fragment"/>
-    <fragment android:id="@+id/fragment_transaction" android:name="com.exercise.groupexpensemanagement.ui.transaction.TransactionFragment" tools:layout="@layout/transaction_fragment"/>
-    <fragment android:id="@+id/fragment_report" android:name="com.exercise.groupexpensemanagement.ui.report.ReportFragment" tools:layout="@layout/report_fragment"/>
+    <fragment android:id="@+id/fragment_dashboard" android:name="com.exercise.groupexpensemanagement.ui.dashboad.DashboardFragment" tools:layout="@layout/fragment_dashboard"/>
+    <fragment android:id="@+id/fragment_member" android:name="com.exercise.groupexpensemanagement.ui.member.MemberFragment" tools:layout="@layout/fragment_member"/>
+    <fragment android:id="@+id/fragment_transaction" android:name="com.exercise.groupexpensemanagement.ui.transaction.TransactionFragment" tools:layout="@layout/fragment_transaction"/>
+    <fragment android:id="@+id/fragment_report" android:name="com.exercise.groupexpensemanagement.ui.report.ReportFragment" tools:layout="@layout/fragment_report"/>
 </navigation>

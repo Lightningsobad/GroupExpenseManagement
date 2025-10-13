@@ -9,15 +9,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.exercise.groupexpensemanagement.databinding.TransactionFragmentBinding;
+import com.exercise.groupexpensemanagement.databinding.FragmentTransactionBinding;
 
 public class TransactionFragment extends Fragment {
-    TransactionFragmentBinding binding;
+    FragmentTransactionBinding binding;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = TransactionFragmentBinding.inflate(inflater, container, false);
+        binding = FragmentTransactionBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 }

@@ -85,4 +85,9 @@
         <item name="fontFamily">@font/canva_sans_regular</item>
         <item name="android:includeFontPadding">false</item>
     </style>
+
+    <style name="CustomCardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/button_corner_radius</item>
+        <item name="cardBackgroundColor">@color/primary_color</item>
+    </style>
 </resources>

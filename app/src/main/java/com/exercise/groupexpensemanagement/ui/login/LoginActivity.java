@@ -6,25 +6,20 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.fragment.NavHostFragment;
 
-import com.exercise.groupexpensemanagement.databinding.LoginActivityBinding;
+import com.exercise.groupexpensemanagement.R;
+import com.exercise.groupexpensemanagement.databinding.ActivityLoginBinding;
 import com.exercise.groupexpensemanagement.ui.main.MainScreenActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
-    LoginActivityBinding binding;
+    ActivityLoginBinding binding;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = LoginActivityBinding.inflate(getLayoutInflater());
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, MainScreenActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 }

@@ -122,7 +122,7 @@
         android:layout_marginTop="@dimen/medium"/>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/btn_login_width"
         android:layout_height="@dimen/height_search_box"
         android:layout_marginTop="@dimen/medium"
         app:cardBackgroundColor="@color/box_background_color"
@@ -153,7 +153,7 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
-    android:layout_width="wrap_content"
+    android:layout_width="@dimen/btn_login_width"
     android:layout_height="@dimen/height_search_box"
     android:layout_marginTop="@dimen/medium"
     app:cardBackgroundColor="@color/box_background_color"
@@ -199,6 +199,7 @@
             android:layout_marginEnd="@dimen/small"
             />
         <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/register"

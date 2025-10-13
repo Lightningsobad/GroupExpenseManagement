@@ -9,15 +9,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.exercise.groupexpensemanagement.databinding.ReportFragmentBinding;
+import com.exercise.groupexpensemanagement.databinding.FragmentDashboardBinding;
 
 public class ReportFragment extends Fragment {
-    ReportFragmentBinding binding;
+    FragmentDashboardBinding binding;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = ReportFragmentBinding.inflate(inflater, container, false);
+        binding = FragmentDashboardBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 }
