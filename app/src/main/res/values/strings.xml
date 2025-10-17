@@ -11,7 +11,7 @@
     <string name="facebook">CONTINUE WITH FACEBOOK</string>
     <string name="option_register">Do not have an account?</string>
     <string name="register">Register here</string>
-    <string name="create_account">Create Your New Password</string>
+    <string name="create_account">Create Your New Account</string>
     <string name="dashboard">Dashboard</string>
     <string name="total_members">Total number of members: </string>
     <string name="fund_balance">Fund balance: </string>
@@ -46,11 +46,19 @@
     <string name="hint_phone_number">Enter member\'s phone number</string>
     <string name="hi">Hi, Alex</string>
     <string name="total_number">Total number of members: </string>
+    <string name="total_number_example">15</string>
     <string name="fund_balance_1">Fund balance: </string>
+    <string name="fund_balance_1_ex">1,000,000 VND</string>
     <string name="most_recent_fund_closing">Most recent fund closing: </string>
+    <string name="most_recent_fund_closing_ex">07/05/2025</string>
     <string name="group_name">Group name: </string>
     <string name="group_name_example">Lightning\'s team</string>
-    <string name="income_and_expenditure_chart">Income and expenditure chart</string>
-    <string name="expense_chart">Expense chart</string>
+    <string name="overview_chart">Overview of funds and expenses</string>
+    <string name="member_fragment">Member Management</string>
+    <string name="overview_fragment">Overview member list</string>
+    <string name="detail_info">Member details</string>
+    <string name="edit_fragment">Edit member</string>
+    <string name="btn_confirm">Confirm</string>
+
 
 </resources>

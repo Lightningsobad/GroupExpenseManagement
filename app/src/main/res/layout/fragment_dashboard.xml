@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/very_large"
+    android:layout_marginTop="@dimen/very_large_2"
     android:paddingHorizontal="@dimen/medium">
 
     <LinearLayout
@@ -23,7 +25,8 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hi"/>
+                android:text="@string/hi"
+                style="@style/TextBody1"/>
         </LinearLayout>
 
         <ImageView
@@ -51,35 +54,48 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/group_name"/>
+                    android:text="@string/group_name"
+                    android:layout_marginTop="@dimen/small"
+                    style="@style/TextBody2"/>
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/group_name_example"/>
+                    android:text="@string/group_name_example"
+                    style="@style/TextHeading3"/>
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/total_members"/>
+                    android:text="@string/total_members"
+                    android:layout_marginTop="@dimen/small"
+                    style="@style/TextBody2"/>
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/group_name_example"/>
+                    android:text="@string/total_number_example"
+                    style="@style/TextHeading3"/>
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/fund_balance_1"/>
+                    android:text="@string/fund_balance_1"
+                    android:layout_marginTop="@dimen/small"
+                    style="@style/TextBody2"/>
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/group_name_example"/>
+                    android:text="@string/fund_balance_1_ex"
+                    style="@style/TextHeading3"/>
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/most_recent_fund_closing"/>
+                    android:text="@string/most_recent_fund_closing"
+                    android:layout_marginTop="@dimen/small"
+                    style="@style/TextBody2"/>
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/group_name_example"/>
+                    android:text="@string/most_recent_fund_closing_ex"
+                    style="@style/TextHeading3"
+                    android:layout_marginBottom="@dimen/small"/>
             </LinearLayout>
 
             <ImageView
@@ -91,4 +107,21 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/overview_chart"
+        style="@style/TextHeading4"
+        android:layout_marginTop="@dimen/medium"/>
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChartExpenseAndFund"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/piechart_height"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/medium" />
+
+
 </LinearLayout>

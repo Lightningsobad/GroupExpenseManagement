@@ -7,6 +7,7 @@
     <dimen name="logo_ads_width">92.1dp</dimen>
 
     <dimen name="very_large_lv2">100dp</dimen>
+    <dimen name="very_large_2">45dp</dimen>
     <dimen name="very_large">40dp</dimen>
     <dimen name="medium_large_lv2">35dp</dimen>
     <dimen name="medium_large">30dp</dimen>
@@ -40,10 +41,11 @@
 
     <dimen name="big_text">20sp</dimen>
     <dimen name="more_big_text">22sp</dimen>
-    <dimen name="small_text">13sp</dimen>
+    <dimen name="small_text">10sp</dimen>
     <dimen name="tiny_text">12sp</dimen>
     <dimen name="medium_text">15sp</dimen>
     <dimen name="medium_lv2_text">16sp</dimen>
+    <dimen name="medium_lv3_text">17sp</dimen>
     <item name="corner_avatar" type="dimen">50%</item>
 
 
@@ -65,6 +67,8 @@
     <dimen name="margin_top_splash_screen">200dp</dimen>
     <dimen name="button_corner_radius">20dp</dimen>
     <dimen name="btn_login_width">265dp</dimen>
+    <dimen name="width_text">294dp</dimen>
+    <dimen name="piechart_height">300dp</dimen>
     <item name="alpha_ic" type="dimen" format="float">0.5</item>
 
     <item name="letter_spacing_button" type="dimen" format="float">-0.016</item>

@@ -1,4 +1,8 @@
 package com.exercise.groupexpensemanagement.ui.signup;
 
-public class SignUpViewModel {
+import androidx.lifecycle.ViewModel;
+
+public class SignUpViewModel extends ViewModel {
+    private static final String TAG = "SignUpViewModel";
+
 }

@@ -1,10 +1,8 @@
 package com.exercise.groupexpensemanagement.ui.creategroup;
 
 import android.app.DatePickerDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,14 +14,9 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.exercise.groupexpensemanagement.R;
 import com.exercise.groupexpensemanagement.databinding.FragmentCreateANewGroupBinding;
-import com.exercise.groupexpensemanagement.ui.addMember.AddMemberFragment;
-import com.exercise.groupexpensemanagement.ui.groupcreate.CreateAGroupActivity;
 import com.exercise.groupexpensemanagement.ui.main.MainScreenActivity;
-import com.google.android.material.datepicker.MaterialDatePicker;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 
 public class CreateAGroupFragment extends Fragment {

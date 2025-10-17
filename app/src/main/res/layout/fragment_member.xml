@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/very_large_2"
+    android:paddingHorizontal="@dimen/medium">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/member_fragment"
+        style="@style/TextHeading2"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/overview_fragment"
+        style="@style/TextHeading4"
+        android:layout_marginTop="@dimen/medium"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/TextButton"
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/small"
+        android:paddingHorizontal="@dimen/large"
+        android:layout_gravity="right"
+        android:layout_marginTop="@dimen/tiny"
+        android:layout_marginBottom="@dimen/medium"
+        android:text="@string/btn_add_member"
+        app:cornerRadius="@dimen/corner_radius_home" />
 
 </LinearLayout>

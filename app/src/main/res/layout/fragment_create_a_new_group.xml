@@ -17,7 +17,9 @@
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/form_group_name" />
+        android:text="@string/form_group_name"
+        android:layout_marginTop="@dimen/medium"
+        style="@style/TextBody1"/>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_search_box"
@@ -39,13 +41,13 @@
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/group_founding_date" />
+        android:text="@string/group_founding_date"
+        android:layout_marginTop="@dimen/medium"
+        style="@style/TextBody1"/>
     <androidx.cardview.widget.CardView
         android:id="@+id/fieldDate"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_search_box"
-
-        android:layout_marginTop="@dimen/medium"
         app:cardBackgroundColor="@color/box_background_color"
         app:cardCornerRadius="@dimen/corner_radius_home">
 
@@ -105,7 +107,7 @@
         android:paddingVertical="@dimen/small"
         android:paddingHorizontal="@dimen/large"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/tiny"
+        android:layout_marginTop="@dimen/small"
         android:layout_marginBottom="@dimen/small"
         android:text="@string/btn_complete"
         app:cornerRadius="@dimen/corner_radius_home" />

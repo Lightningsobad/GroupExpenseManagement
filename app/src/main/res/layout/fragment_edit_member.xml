@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/very_large"
+    android:paddingTop="@dimen/super_large"
     android:paddingHorizontal="@dimen/medium">
 
     <LinearLayout
@@ -21,7 +21,7 @@
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/add_a_member"
+            android:text="@string/edit_fragment"
             android:layout_marginStart="@dimen/small"
             style="@style/TextHeading2"/>
 
@@ -45,6 +45,7 @@
         android:paddingHorizontal="@dimen/large"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/tiny"
+        android:layout_marginBottom="@dimen/small"
         android:text="@string/btn_select_image"
         app:cornerRadius="@dimen/corner_radius_home" />
 
@@ -59,17 +60,17 @@
         android:layout_height="@dimen/height_search_box"
         app:cardBackgroundColor="@color/box_background_color"
         app:cardCornerRadius="@dimen/corner_radius_home">
-            <EditText
-                style="@style/TextInsideSearchBox"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/height_search_box"
-                android:background="@null"
-                android:layout_gravity="center"
-                android:hint="@string/hint_text_feild_1"
-                android:paddingStart="@dimen/more_large"
-                android:paddingEnd="@dimen/small"
-                android:singleLine="true"
-                android:textColorHint="@color/hint_text_color" />
+        <EditText
+            style="@style/TextInsideSearchBox"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_search_box"
+            android:background="@null"
+            android:layout_gravity="center"
+            android:paddingStart="@dimen/more_large"
+            android:paddingEnd="@dimen/small"
+            android:singleLine="true"
+            android:text="Nguyen Van Thien"
+            />
     </androidx.cardview.widget.CardView>
 
     <com.google.android.material.textview.MaterialTextView
@@ -89,12 +90,11 @@
             android:layout_height="@dimen/height_search_box"
             android:background="@null"
             android:layout_gravity="center"
-            android:hint="@string/hint_yob"
             android:paddingStart="@dimen/more_large"
             android:paddingEnd="@dimen/small"
             android:singleLine="true"
             android:inputType="number"
-            android:textColorHint="@color/hint_text_color" />
+            android:text="1995" />
     </androidx.cardview.widget.CardView>
 
     <com.google.android.material.textview.MaterialTextView
@@ -114,11 +114,10 @@
             android:layout_height="@dimen/height_search_box"
             android:background="@null"
             android:layout_gravity="center"
-            android:hint="@string/hint_address"
             android:paddingStart="@dimen/more_large"
             android:paddingEnd="@dimen/small"
             android:singleLine="true"
-            android:textColorHint="@color/hint_text_color" />
+            android:text="Ha Noi, Viet Nam" />
     </androidx.cardview.widget.CardView>
 
     <com.google.android.material.textview.MaterialTextView
@@ -147,12 +146,12 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="@dimen/layout_weight_1"
                 android:background="@null"
-                android:hint="@string/hint_group_founding"
                 android:paddingStart="@dimen/more_large"
                 android:paddingEnd="@dimen/small"
                 android:singleLine="true"
                 android:textColorHint="@color/hint_text_color"
                 android:focusable="false"
+                android:text="01/01/2025"
                 android:inputType="none"/>
 
             <ImageView
@@ -181,12 +180,11 @@
             android:layout_height="@dimen/height_search_box"
             android:background="@null"
             android:layout_gravity="center"
-            android:hint="@string/hint_phone_number"
             android:inputType="number"
             android:paddingStart="@dimen/more_large"
             android:paddingEnd="@dimen/small"
             android:singleLine="true"
-            android:textColorHint="@color/hint_text_color" />
+            android:text="0902602912" />
     </androidx.cardview.widget.CardView>
 
     <com.google.android.material.textview.MaterialTextView
@@ -206,11 +204,10 @@
             android:layout_height="@dimen/height_search_box"
             android:background="@null"
             android:layout_gravity="center"
-            android:hint="@string/hint_email"
             android:paddingStart="@dimen/more_large"
             android:paddingEnd="@dimen/small"
             android:singleLine="true"
-            android:textColorHint="@color/hint_text_color" />
+            android:text="nguyenthien95@gmail.com" />
     </androidx.cardview.widget.CardView>
     <com.google.android.material.button.MaterialButton
         style="@style/TextButton"
@@ -221,7 +218,7 @@
         android:layout_gravity="right"
         android:layout_marginTop="@dimen/small"
         android:layout_marginBottom="@dimen/small"
-        android:text="@string/btn_add"
+        android:text="@string/btn_confirm"
         app:cornerRadius="@dimen/corner_radius_home" />
 
 
