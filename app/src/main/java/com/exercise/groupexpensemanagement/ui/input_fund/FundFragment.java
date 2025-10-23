@@ -1,4 +1,4 @@
-package com.exercise.groupexpensemanagement.ui.transaction;
+package com.exercise.groupexpensemanagement.ui.input_fund;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,15 +9,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.exercise.groupexpensemanagement.databinding.FragmentTransactionBinding;
+import com.exercise.groupexpensemanagement.databinding.FragmentFundBinding;
 
-public class TransactionFragment extends Fragment {
-    FragmentTransactionBinding binding;
+public class FundFragment extends Fragment {
+    FragmentFundBinding binding;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = FragmentTransactionBinding.inflate(inflater, container, false);
+        binding = FragmentFundBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 }

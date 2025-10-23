@@ -60,5 +60,16 @@
     <string name="edit_fragment">Edit member</string>
     <string name="btn_confirm">Confirm</string>
 
+    <string name="input_transaction_fragment">Enter income and expenditure</string>
+    <string name="expense">Expense</string>
+    <string name="fund">Fund</string>
+    <string name="date">Date: </string>
+    <string name="note">Note: </string>
+    <string name="money_spent">Money spent: </string>
+    <string name="money_received">Money received: </string>
+    <string name="category">Category: </string>
+    <string name="money_add">Money add: </string>
+
+
 
 </resources>

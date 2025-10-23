@@ -9,7 +9,7 @@
         android:icon="@drawable/ic_member"
         android:title="Member" />
     <item
-        android:id="@+id/fragment_transaction"
+        android:id="@+id/fragment_input_transaction"
         android:icon="@drawable/ic_transaction"
         android:title="Transaction" />
     <item

@@ -11,7 +11,7 @@
         <action android:id="@+id/action_list_to_detail" app:destination="@id/fragment_detail_member"/>
         <action android:id="@+id/action_list_to_edit" app:destination="@id/fragment_edit_member"/>"
     </fragment>
-    <fragment android:id="@+id/fragment_transaction" android:name="com.exercise.groupexpensemanagement.ui.transaction.TransactionFragment" tools:layout="@layout/fragment_transaction"/>
+    <fragment android:id="@+id/fragment_input_transaction" android:name="com.exercise.groupexpensemanagement.ui.transaction_input.TransactionFragment" tools:layout="@layout/fragment_input_transaction"/>
     <fragment android:id="@+id/fragment_report" android:name="com.exercise.groupexpensemanagement.ui.report.ReportFragment" tools:layout="@layout/fragment_report"/>
 
     <fragment android:id="@+id/fragment_form_add_a_member" android:name="com.exercise.groupexpensemanagement.ui.member_add.AddMemberFragment" tools:layout="@layout/fragment_add_members"/>
