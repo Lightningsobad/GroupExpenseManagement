@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/very_large"
+    android:paddingTop="@dimen/very_large_2"
     android:paddingHorizontal="@dimen/medium">
 
     <com.google.android.material.textview.MaterialTextView
@@ -16,7 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginHorizontal="@dimen/very_large"
         android:background="@drawable/tab_outline">
 
         <com.google.android.material.textview.MaterialTextView
@@ -25,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:padding="12dp"
+            android:padding="@dimen/small"
             android:text="@string/expense"
            style="@style/TextButton"
             android:background="@drawable/tab_selected"

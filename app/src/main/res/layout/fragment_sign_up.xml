@@ -22,7 +22,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_search_box"
-        android:layout_marginTop="@dimen/large"
+        android:layout_marginTop="@dimen/very"
         app:cardBackgroundColor="@color/box_background_color"
         app:cardCornerRadius="@dimen/corner_radius_home">
 

@@ -2,9 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="tab_chi_tieu"/>
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/medium"
+    android:paddingHorizontal="@dimen/medium">
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date"
+        style="@style/TextBody4"/>
 </LinearLayout>
