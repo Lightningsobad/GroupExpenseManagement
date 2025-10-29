@@ -11,10 +11,10 @@ import androidx.navigation.ui.NavigationUI;
 import com.exercise.groupexpensemanagement.R;
 import com.exercise.groupexpensemanagement.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.tabs.TabLayout;
 
 public class MainScreenActivity extends AppCompatActivity {
     ActivityMainBinding binding;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

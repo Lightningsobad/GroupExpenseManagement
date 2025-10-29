@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,45 +7,20 @@
     android:paddingHorizontal="@dimen/medium">
 
     <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/title_fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/input_transaction_fragment"
         style="@style/TextHeading2"/>
-    <LinearLayout
-        android:id="@+id/tabContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="@dimen/small"
-        android:layout_marginHorizontal="@dimen/very_large"
-        android:background="@drawable/tab_outline">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tabChi"
-            android:layout_width="0dp"
+    <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="@dimen/small"
-            android:text="@string/expense"
-           style="@style/TextButton"
-            android:background="@drawable/tab_selected"
-            android:textColor="@color/white" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tabThu"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/fund"
-            style="@style/TextButton"
-            android:background="@drawable/tab_unselected"
-            android:textColor="@color/hint_text_color" />
-    </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/child_fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-</LinearLayout>
+        android:layout_marginTop="@dimen/medium"
+             android:layout_below="@id/title_fragment"/>
+    <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tab_layout"/>
+</RelativeLayout>

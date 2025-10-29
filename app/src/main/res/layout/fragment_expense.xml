@@ -1,13 +1,511 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="@dimen/medium"
     android:paddingHorizontal="@dimen/medium">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            android:layout_gravity="center"
+            style="@style/TextBody4"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fieldDate"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/medium_large_lv2"
+            app:cardBackgroundColor="@color/box_background_color_2"
+            app:cardCornerRadius="@dimen/corner_radius_home"
+            android:layout_marginStart="@dimen/small">
+                <EditText
+                    android:id="@+id/edtDate"
+                    style="@style/TextInsideSearchBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@null"
+                    android:hint="@string/hint_group_founding"
+                    android:paddingStart="@dimen/more_large"
+                    android:paddingEnd="@dimen/small"
+                    android:singleLine="true"
+                    android:textColorHint="@color/hint_text_color"
+                    android:focusable="false"
+                    android:inputType="none"/>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/medium">
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/note"
+            android:layout_gravity="center"
+            style="@style/TextBody4"/>
+
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:hint="@string/note_hint"
+           android:layout_marginStart="@dimen/small"
+           android:textColorHint="@color/hint_text_color"
+           style="@style/TextInsideSearchBox"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/medium">
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/money"
+            android:layout_gravity="center"
+            style="@style/TextBody4"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/money"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/medium_large_lv2"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/box_background_color_2"
+            app:cardCornerRadius="@dimen/corner_radius_home"
+            android:layout_marginStart="@dimen/medium">
+
+            <EditText
+                style="@style/TextInsideSearchBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:hint="@string/money_hint"
+                android:paddingStart="@dimen/more_large"
+                android:paddingEnd="@dimen/small"
+                android:singleLine="true"
+                android:textColorHint="@color/hint_text_color"
+                android:inputType="number"/>
+        </androidx.cardview.widget.CardView>
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/currency"
+            style="@style/TextBody4"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/small"/>
+    </LinearLayout>
+
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/date"
+        android:text="@string/category"
+        android:layout_gravity="left"
+        android:layout_marginTop="@dimen/medium"
         style="@style/TextBody4"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:rowCount="4"
+        android:layout_marginTop="@dimen/small"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
+        android:useDefaultMargins="true">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/tiny"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/boder_item_selector">
+
+            <ImageView
+                android:layout_width="@dimen/larger_icon"
+                android:layout_height="@dimen/larger_icon"
+                android:src="@drawable/ic_meal"
+                android:contentDescription="@string/food" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tiny"
+                android:text="@string/food"
+                android:textSize="@dimen/tiny_text"
+                style="@style/TextBody1"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/tiny"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/boder_item_selector">
+
+            <ImageView
+                android:layout_width="@dimen/larger_icon"
+                android:layout_height="@dimen/larger_icon"
+                android:src="@drawable/ic_coffee"
+                android:contentDescription="@string/coffee" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tiny"
+                android:text="@string/coffee"
+                android:textSize="@dimen/tiny_text"
+                style="@style/TextBody1"
+                android:gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/tiny"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/boder_item_selector">
+
+            <ImageView
+                android:layout_width="@dimen/larger_icon"
+                android:layout_height="@dimen/larger_icon"
+                android:src="@drawable/ic_sport"
+                android:contentDescription="@string/sport" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tiny"
+                android:text="@string/sport"
+                android:textSize="@dimen/tiny_text"
+                style="@style/TextBody1"
+                android:gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/tiny"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/boder_item_selector">
+
+            <ImageView
+                android:layout_width="@dimen/larger_icon"
+                android:layout_height="@dimen/larger_icon"
+                android:src="@drawable/ic_birthday"
+                android:contentDescription="@string/birthday" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tiny"
+                android:text="@string/birthday"
+                android:textSize="@dimen/tiny_text"
+                style="@style/TextBody1"
+                android:gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/tiny"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/boder_item_selector">
+
+            <ImageView
+                android:layout_width="@dimen/larger_icon"
+                android:layout_height="@dimen/larger_icon"
+                android:src="@drawable/ic_travel"
+                android:contentDescription="@string/travel" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tiny"
+                android:text="@string/travel"
+                android:textSize="@dimen/tiny_text"
+                style="@style/TextBody1"
+                android:gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/tiny"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/boder_item_selector">
+
+            <ImageView
+                android:layout_width="@dimen/larger_icon"
+                android:layout_height="@dimen/larger_icon"
+                android:src="@drawable/ic_houseware"
+                android:contentDescription="@string/things" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tiny"
+                android:text="@string/things"
+                android:textSize="@dimen/tiny_text"
+                style="@style/TextBody1"
+                android:singleLine="true"
+                android:gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/tiny"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/boder_item_selector">
+
+            <ImageView
+                android:layout_width="@dimen/larger_icon"
+                android:layout_height="@dimen/larger_icon"
+                android:src="@drawable/ic_electric"
+                android:contentDescription="@string/electric" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tiny"
+                android:text="@string/electric"
+                android:textSize="@dimen/tiny_text"
+                style="@style/TextBody1"
+                android:gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/tiny"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/boder_item_selector">
+
+            <ImageView
+                android:layout_width="@dimen/larger_icon"
+                android:layout_height="@dimen/larger_icon"
+                android:src="@drawable/ic_water"
+                android:contentDescription="@string/water" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tiny"
+                android:text="@string/water"
+                android:textSize="@dimen/tiny_text"
+                style="@style/TextBody1"
+                android:gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/tiny"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/boder_item_selector">
+
+            <ImageView
+                android:layout_width="@dimen/larger_icon"
+                android:layout_height="@dimen/larger_icon"
+                android:src="@drawable/ic_internet"
+                android:contentDescription="@string/internet" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tiny"
+                android:text="@string/internet"
+                android:textSize="@dimen/tiny_text"
+                style="@style/TextBody1"
+                android:gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/tiny"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/boder_item_selector">
+
+            <ImageView
+                android:layout_width="@dimen/larger_icon"
+                android:layout_height="@dimen/larger_icon"
+                android:src="@drawable/ic_house"
+                android:contentDescription="@string/house" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tiny"
+                android:text="@string/house"
+                android:textSize="@dimen/tiny_text"
+                style="@style/TextBody1"
+                android:gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/tiny"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/boder_item_selector">
+
+            <ImageView
+                android:layout_width="@dimen/larger_icon"
+                android:layout_height="@dimen/larger_icon"
+                android:src="@drawable/ic_volunteer"
+                android:contentDescription="@string/volunteer" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tiny"
+                android:text="@string/volunteer"
+                android:textSize="@dimen/tiny_text"
+                style="@style/TextBody1"
+                android:gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/tiny"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/boder_item_selector">
+
+            <ImageView
+                android:layout_width="@dimen/larger_icon"
+                android:layout_height="@dimen/larger_icon"
+                android:src="@drawable/ic_gift"
+                android:contentDescription="@string/gift" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tiny"
+                android:text="@string/gift"
+                android:textSize="@dimen/tiny_text"
+                style="@style/TextBody1"
+                android:gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/tiny"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/boder_item_selector">
+
+            <ImageView
+                android:layout_width="@dimen/larger_icon"
+                android:layout_height="@dimen/larger_icon"
+                android:src="@drawable/ic_project"
+                android:contentDescription="@string/project" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tiny"
+                android:text="@string/project"
+                android:textSize="@dimen/tiny_text"
+                style="@style/TextBody1"
+                android:gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/tiny"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/boder_item_selector">
+
+            <ImageView
+                android:layout_width="@dimen/larger_icon"
+                android:layout_height="@dimen/larger_icon"
+                android:src="@drawable/ic_holiday"
+                android:contentDescription="@string/holiday" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tiny"
+                android:text="@string/holiday"
+                android:textSize="@dimen/tiny_text"
+                style="@style/TextBody1"
+                android:gravity="center" />
+        </LinearLayout>
+    </GridLayout>
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/TextButton"
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/super_large"
+        android:paddingVertical="@dimen/small"
+        android:paddingHorizontal="@dimen/large"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/medium"
+        android:layout_marginBottom="@dimen/small"
+        android:text="@string/submit_btn"
+        app:cornerRadius="@dimen/corner_radius_home" />
+
+
+
+
 </LinearLayout>

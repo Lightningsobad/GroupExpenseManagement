@@ -56,4 +56,6 @@ dependencies {
     implementation libs.mpandroidchart
     implementation libs.lifecycle.viewmodel
     implementation libs.lifecycle.livedata
+    implementation libs.material.v1xx
+    implementation libs.viewpager2
 }

@@ -37,7 +37,7 @@
     <dimen name="small_icon">20dp</dimen>
     <dimen name="medium_icon">25dp</dimen>
     <dimen name="bigger_icon">30dp</dimen>
-    <dimen name="larger_icon">40dp</dimen>
+    <dimen name="larger_icon">36dp</dimen>
 
     <dimen name="big_text">20sp</dimen>
     <dimen name="more_big_text">22sp</dimen>
@@ -66,6 +66,7 @@
     <dimen name="super_large_lv2">60dp</dimen>
     <dimen name="margin_top_splash_screen">200dp</dimen>
     <dimen name="button_corner_radius">20dp</dimen>
+    <dimen name="item_corner_radius">15dp</dimen>
     <dimen name="btn_login_width">265dp</dimen>
     <dimen name="width_text">294dp</dimen>
     <dimen name="piechart_height">300dp</dimen>

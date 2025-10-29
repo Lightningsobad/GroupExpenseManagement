@@ -10,11 +10,17 @@
         android:title="Member" />
     <item
         android:id="@+id/fragment_input_transaction"
+        android:icon="@drawable/ic_edit_2"
+        android:title="Input" />
+    <item
+        android:id="@+id/fragment_statistical"
         android:icon="@drawable/ic_transaction"
         android:title="Transaction" />
     <item
         android:id="@+id/fragment_report"
         android:icon="@drawable/ic_report"
         android:title="Report" />
+
+
 
 </menu>

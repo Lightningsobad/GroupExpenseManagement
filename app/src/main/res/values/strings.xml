@@ -65,11 +65,28 @@
     <string name="fund">Fund</string>
     <string name="date">Date: </string>
     <string name="note">Note: </string>
-    <string name="money_spent">Money spent: </string>
-    <string name="money_received">Money received: </string>
+    <string name="note_hint">Add a note</string>
+    <string name="money">Money: </string>
     <string name="category">Category: </string>
     <string name="money_add">Money add: </string>
+    <string name="money_hint">0</string>
+    <string name="currency">VND</string>
 
+    <string name="food">Food</string>
+    <string name="coffee">Coffee</string>
+    <string name="birthday">Birthday</string>
+    <string name="sport">Sport</string>
+    <string name="travel">Travel</string>
+    <string name="things">Houseware</string>
+    <string name="electric">Electric</string>
+    <string name="water">Water</string>
+    <string name="internet">Internet</string>
+    <string name="house">House</string>
+    <string name="volunteer">Volunteer</string>
+    <string name="gift">Gift</string>
+    <string name="project">Project</string>
+    <string name="holiday">Holiday</string>
+    <string name="submit_btn">SUBMIT</string>
 
 
 </resources>

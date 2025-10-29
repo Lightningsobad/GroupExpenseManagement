@@ -13,59 +13,34 @@ import com.exercise.groupexpensemanagement.R;
 import com.exercise.groupexpensemanagement.databinding.FragmentInputTransactionBinding;
 import com.exercise.groupexpensemanagement.ui.input_expense.ExpenseFragment;
 import com.exercise.groupexpensemanagement.ui.input_fund.FundFragment;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class TransactionFragment extends Fragment {
     FragmentInputTransactionBinding binding;
+
+    private ViewPagerAdapter adapter;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentInputTransactionBinding.inflate(inflater, container, false);
 
-        replaceChildFragment(new ExpenseFragment());
-
-        binding.tabChi.animate().scaleX(0.95f).scaleY(0.95f).setDuration(100).withEndAction(() -> {
-            binding.tabThu.animate().scaleX(1f).scaleY(1f).setDuration(100);
-        }).start();
-
-        binding.tabChi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectTab(true);
-                replaceChildFragment(new ExpenseFragment());
+        adapter = new ViewPagerAdapter(getActivity());
+        binding.viewPager.setAdapter(adapter);
+        new TabLayoutMediator(binding.tabLayout, binding.viewPager, (tab, i) -> {
+            switch (i) {
+                case 0:
+                    tab.setText(R.string.expense);
+                    break;
+                case 1:
+                    tab.setText(R.string.fund);
+                    break;
             }
-        });
+        }).attach();
 
-        binding.tabThu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectTab(false);
-                replaceChildFragment(new FundFragment());
-            }
-        });
+
+
         return binding.getRoot();
-    }
-
-    private void replaceChildFragment(Fragment fragment) {
-        getChildFragmentManager().beginTransaction()
-                .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
-                .replace(R.id.child_fragment_container, fragment)
-                .commit();
-    }
-
-    private void selectTab(boolean isChi) {
-        if (isChi) {
-            binding.tabChi.setBackgroundResource(R.drawable.tab_selected);
-            binding.tabChi.setTextColor(getResources().getColor(android.R.color.white));
-
-            binding.tabThu.setBackgroundResource(R.drawable.tab_unselected);
-            binding.tabThu.setTextColor(getResources().getColor(R.color.primary_color));
-        } else {
-            binding.tabThu.setBackgroundResource(R.drawable.tab_selected);
-            binding.tabThu.setTextColor(getResources().getColor(android.R.color.white));
-
-            binding.tabChi.setBackgroundResource(R.drawable.tab_unselected);
-            binding.tabChi.setTextColor(getResources().getColor(R.color.primary_color));
-        }
     }
 }
