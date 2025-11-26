@@ -88,5 +88,7 @@
     <string name="holiday">Holiday</string>
     <string name="submit_btn">SUBMIT</string>
 
+    <string name="title_detail_transaction">Statistics</string>
+
 
 </resources>
