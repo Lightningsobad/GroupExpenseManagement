@@ -70,6 +70,8 @@
     <dimen name="btn_login_width">265dp</dimen>
     <dimen name="width_text">294dp</dimen>
     <dimen name="piechart_height">300dp</dimen>
+    <dimen name="piechart_height_2">325dp</dimen>
+
     <item name="alpha_ic" type="dimen" format="float">0.5</item>
 
     <item name="letter_spacing_button" type="dimen" format="float">-0.016</item>

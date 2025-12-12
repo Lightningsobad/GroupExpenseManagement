@@ -1,13 +1,22 @@
 package com.exercise.groupexpensemanagement.data.model;
 
+import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
 import java.util.List;
 
-public class User {
+public class User implements Serializable {
+    @SerializedName("nhoMs")
     private List<Group> nhoMs;
-    private String maNguoiDung;
+    @SerializedName("maNguoiDung")
+    private int maNguoiDung;
+    @SerializedName("tenDangNhap")
     private String tenDangNhap;
+    @SerializedName("matKhau")
     private String matKhau;
+    @SerializedName("email")
     private String email;
+    @SerializedName("anhDaiDien")
     private String anhDaiDien;
 
     public List<Group> getNhoMs() {
@@ -18,11 +27,11 @@ public class User {
         this.nhoMs = nhoMs;
     }
 
-    public String getMaNguoiDung() {
+    public int getMaNguoiDung() {
         return maNguoiDung;
     }
 
-    public void setMaNguoiDung(String maNguoiDung) {
+    public void setMaNguoiDung(int maNguoiDung) {
         this.maNguoiDung = maNguoiDung;
     }
 

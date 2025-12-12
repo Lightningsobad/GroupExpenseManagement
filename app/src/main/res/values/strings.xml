@@ -66,10 +66,13 @@
     <string name="date">Date: </string>
     <string name="note">Note: </string>
     <string name="note_hint">Add a note</string>
+    <string name="topic">Topic: </string>
+    <string name="topic_hint">Add a topic</string>
     <string name="money">Money: </string>
     <string name="category">Category: </string>
     <string name="money_add">Money add: </string>
     <string name="money_hint">0</string>
+    <string name="money_hint_2">Enter money\'s each member</string>
     <string name="currency">VND</string>
 
     <string name="food">Food</string>
@@ -87,8 +90,16 @@
     <string name="project">Project</string>
     <string name="holiday">Holiday</string>
     <string name="submit_btn">SUBMIT</string>
+    <string name="delete_btn">DELETE</string>
 
     <string name="title_detail_transaction">Statistics</string>
+    <string name="list_of_expenses">List of expenses for the month</string>
+
+    <string name="edit_expense">Edit expense</string>
+    <string name="title_report">Report expenses</string>
+    <string name="expense_report">Report on monthly expenses</string>
+    <string name="export_report">Export</string>
+    <string name="total_expenses">Total of expenses: </string>
 
 
 </resources>

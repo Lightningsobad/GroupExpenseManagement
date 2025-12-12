@@ -4,12 +4,19 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/medium"
+    android:layout_marginTop="@dimen/large"
     android:paddingHorizontal="@dimen/medium">
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/title_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_expense"
+        style="@style/TextHeading2"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/medium">
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -24,34 +31,34 @@
             app:cardBackgroundColor="@color/box_background_color_2"
             app:cardCornerRadius="@dimen/corner_radius_home"
             android:layout_marginStart="@dimen/small">
-                <LinearLayout
-                    android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/edtDate"
+                    style="@style/TextInsideSearchBox"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:orientation="horizontal">
-                    <EditText
-                        android:id="@+id/edtDate"
-                        style="@style/TextInsideSearchBox"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:background="@null"
-                        android:hint="@string/hint_group_founding"
-                        android:paddingStart="@dimen/more_large"
-                        android:paddingEnd="@dimen/small"
-                        android:singleLine="true"
-                        android:textColorHint="@color/hint_text_color"
-                        android:focusable="false"
-                        android:inputType="none"/>
+                    android:background="@null"
+                    android:hint="@string/hint_group_founding"
+                    android:paddingStart="@dimen/more_large"
+                    android:paddingEnd="@dimen/small"
+                    android:singleLine="true"
+                    android:textColorHint="@color/hint_text_color"
+                    android:focusable="false"
+                    android:inputType="none"/>
 
-                    <ImageView
-                        android:id="@+id/icCalendar"
-                        android:layout_width="@dimen/small_icon"
-                        android:layout_height="@dimen/small_icon"
-                        android:layout_marginEnd="@dimen/small"
-                        android:src="@drawable/ic_calendar" />
-                </LinearLayout>
+                <ImageView
+                    android:id="@+id/icCalendar"
+                    android:layout_width="@dimen/small_icon"
+                    android:layout_height="@dimen/small_icon"
+                    android:layout_marginEnd="@dimen/small"
+                    android:src="@drawable/ic_calendar" />
+            </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -68,14 +75,14 @@
             android:layout_gravity="center"
             style="@style/TextBody4"/>
 
-       <EditText
-           android:id="@+id/edtNote"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:hint="@string/note_hint"
-           android:layout_marginStart="@dimen/small"
-           android:textColorHint="@color/hint_text_color"
-           style="@style/TextInsideSearchBox"/>
+        <EditText
+            android:id="@+id/edtNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/note_hint"
+            android:layout_marginStart="@dimen/small"
+            android:textColorHint="@color/hint_text_color"
+            style="@style/TextInsideSearchBox"/>
 
 
     </LinearLayout>
@@ -533,8 +540,20 @@
         android:paddingHorizontal="@dimen/large"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/medium"
-        android:layout_marginBottom="@dimen/small"
         android:text="@string/submit_btn"
+        app:cornerRadius="@dimen/corner_radius_home" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/TextButton"
+        android:id="@+id/btnDelete"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/super_large"
+        android:paddingVertical="@dimen/small"
+        android:paddingHorizontal="@dimen/large"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/tiny"
+        android:text="@string/delete_btn"
+        android:backgroundTint="@color/amount"
         app:cornerRadius="@dimen/corner_radius_home" />
 
 

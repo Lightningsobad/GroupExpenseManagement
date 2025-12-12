@@ -24,22 +24,58 @@
             app:cardBackgroundColor="@color/box_background_color_2"
             app:cardCornerRadius="@dimen/corner_radius_home"
             android:layout_marginStart="@dimen/small">
-            <EditText
-                android:id="@+id/edtDate"
-                style="@style/TextInsideSearchBox"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@null"
-                android:hint="@string/hint_group_founding"
-                android:paddingStart="@dimen/more_large"
-                android:paddingEnd="@dimen/small"
-                android:singleLine="true"
-                android:textColorHint="@color/hint_text_color"
-                android:focusable="false"
-                android:inputType="none"/>
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/edtDate"
+                    style="@style/TextInsideSearchBox"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@null"
+                    android:hint="@string/hint_group_founding"
+                    android:paddingStart="@dimen/more_large"
+                    android:paddingEnd="@dimen/small"
+                    android:singleLine="true"
+                    android:textColorHint="@color/hint_text_color"
+                    android:focusable="false"
+                    android:inputType="none"/>
+
+                <ImageView
+                    android:id="@+id/icCalendar"
+                    android:layout_width="@dimen/small_icon"
+                    android:layout_height="@dimen/small_icon"
+                    android:layout_marginEnd="@dimen/small"
+                    android:src="@drawable/ic_calendar" />
+            </LinearLayout>
+
         </androidx.cardview.widget.CardView>
 
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/medium">
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/topic"
+            android:layout_gravity="center"
+            style="@style/TextBody4"/>
+
+        <EditText
+            android:id="@+id/edtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/topic_hint"
+            android:layout_marginStart="@dimen/small"
+            android:textColorHint="@color/hint_text_color"
+            style="@style/TextInsideSearchBox"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,14 +90,13 @@
             style="@style/TextBody4"/>
 
         <EditText
+            android:id="@+id/edtNote"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/note_hint"
             android:layout_marginStart="@dimen/small"
             android:textColorHint="@color/hint_text_color"
             style="@style/TextInsideSearchBox"/>
-
-
     </LinearLayout>
 
     <LinearLayout
@@ -86,12 +121,13 @@
             android:layout_marginStart="@dimen/medium">
 
             <EditText
+                android:id="@+id/edtMoney"
                 style="@style/TextInsideSearchBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@null"
-                android:hint="@string/money_hint"
+                android:hint="@string/money_hint_2"
                 android:paddingStart="@dimen/more_large"
                 android:paddingEnd="@dimen/small"
                 android:singleLine="true"
@@ -109,13 +145,13 @@
 
     <com.google.android.material.button.MaterialButton
         style="@style/TextButton"
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnSubmit"
         android:layout_width="match_parent"
         android:layout_height="@dimen/super_large"
         android:paddingVertical="@dimen/small"
         android:paddingHorizontal="@dimen/large"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/medium"
+        android:layout_marginTop="@dimen/large"
         android:layout_marginBottom="@dimen/small"
         android:text="@string/submit_btn"
         app:cornerRadius="@dimen/corner_radius_home" />

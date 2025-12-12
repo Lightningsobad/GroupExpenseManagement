@@ -23,6 +23,7 @@
                 android:text="@string/dashboard"
                 style="@style/TextHeading2"/>
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvGreeting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/hi"
@@ -58,6 +59,7 @@
                     android:layout_marginTop="@dimen/small"
                     style="@style/TextBody2"/>
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvGroupName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/group_name_example"
@@ -69,6 +71,7 @@
                     android:layout_marginTop="@dimen/small"
                     style="@style/TextBody2"/>
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvTotalMembers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/total_number_example"
@@ -80,6 +83,7 @@
                     android:layout_marginTop="@dimen/small"
                     style="@style/TextBody2"/>
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvTotalFund"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/fund_balance_1_ex"
@@ -91,6 +95,7 @@
                     android:layout_marginTop="@dimen/small"
                     style="@style/TextBody2"/>
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvDateClosing"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/most_recent_fund_closing_ex"

@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="@dimen/very_large"
+    android:paddingHorizontal="@dimen/medium"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/title_fragment"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/title_report"
+            style="@style/TextHeading2"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvReport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/export_report"
+            style="@style/TextHeading4.2" />
+    </LinearLayout>
+
+
+
+    <CalendarView
+        android:id="@+id/calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/expense_report"
+        style="@style/TextHeading4"
+        android:layout_marginTop="@dimen/small"/>
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChartExpenseAndFund"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/piechart_height_2"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/small" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_expenses"
+            style="@style/TextHeading4"
+            android:layout_marginTop="@dimen/small"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTotalExpenses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextHeading4"
+            android:textColor="@color/amount"
+            android:layout_marginStart="@dimen/small"
+            android:layout_marginTop="@dimen/small"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

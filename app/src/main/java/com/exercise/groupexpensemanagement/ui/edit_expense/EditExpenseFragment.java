@@ -1,8 +1,7 @@
-package com.exercise.groupexpensemanagement.ui.input_expense;
+package com.exercise.groupexpensemanagement.ui.edit_expense;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,43 +15,65 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.exercise.groupexpensemanagement.data.api.ApiService;
-import com.exercise.groupexpensemanagement.databinding.FragmentExpenseBinding;
+import com.exercise.groupexpensemanagement.data.model.Expense;
+import com.exercise.groupexpensemanagement.databinding.FragmentEditExpenseBinding;
 import com.exercise.groupexpensemanagement.ui.main.MainScreenViewModel;
 import com.exercise.groupexpensemanagement.util.DateUtils;
 
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ExpenseFragment extends Fragment {
-    FragmentExpenseBinding binding;
+public class EditExpenseFragment extends Fragment {
+    FragmentEditExpenseBinding binding;
     private MainScreenViewModel mainScreenViewModel;
-
+    private Expense expense;
     private int groupId;
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = FragmentExpenseBinding.inflate(inflater, container, false);
+        binding = FragmentEditExpenseBinding.inflate(inflater, container, false );
         mainScreenViewModel = new ViewModelProvider(requireActivity()).get(MainScreenViewModel.class);
         mainScreenViewModel.getGroup().observe(getViewLifecycleOwner(), group -> {
             groupId = group.getId();
         });
+        if (getArguments() != null) {
+            expense = (Expense) getArguments().getSerializable("expense_data");
+        }
+        setUpDataBinding();
         setUpCalendarSelected();
         setUpCategorySelected();
         clickSubmitButton();
+        clickDeleteButton();
         return binding.getRoot();
     }
 
-    private void setUpCalendarSelected(){
-        binding.fieldDate.setOnClickListener(new View.OnClickListener() {
+    private void clickDeleteButton() {
+        binding.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setUpCalendar();
+                ApiService.apiService.deleteExpense(expense.getId()).enqueue(new Callback<Boolean>() {
+                    @Override
+                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                        if(response.isSuccessful() && response.body() != null){
+                            boolean isSuccess = response.body();
+                            if(isSuccess){
+                                Toast.makeText(getContext(), "Delete successfully!", Toast.LENGTH_SHORT).show();
+                                mainScreenViewModel.updateGroup(groupId);
+                            } else{
+                                Toast.makeText(getContext(), "Delete failed!", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Boolean> call, Throwable t) {
+                        Toast.makeText(getContext(), "API ERROR!", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
     }
@@ -65,16 +86,16 @@ public class ExpenseFragment extends Fragment {
                 String note = binding.edtNote.getText().toString();
                 int money = Integer.parseInt(binding.edtMoney.getText().toString());
                 String name = binding.tvCategory.getText().toString();
-                ApiService.apiService.addExpense(groupId, name, date, money, note).enqueue(new Callback<Boolean>() {
+                ApiService.apiService.updateExpense(expense.getId(), name, date, money, note).enqueue(new Callback<Boolean>() {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                         if(response.isSuccessful() && response.body() != null){
                             boolean isSuccess = response.body();
                             if(isSuccess){
-                                Toast.makeText(getContext(), "Add expense successfully!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "Information edited successfully!", Toast.LENGTH_SHORT).show();
                                 mainScreenViewModel.updateGroup(groupId);
                             } else{
-                                Toast.makeText(getContext(), "Add expense failed!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "Information edited failed!", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }
@@ -85,6 +106,22 @@ public class ExpenseFragment extends Fragment {
                     }
                 });
 
+            }
+        });
+    }
+
+    private void setUpDataBinding() {
+        binding.edtDate.setText(DateUtils.format(expense.getDateBegin()));
+        binding.edtNote.setText(expense.getNote());
+        binding.edtMoney.setText(String.valueOf(expense.getMoney()));
+        binding.tvCategory.setText(expense.getName());
+    }
+
+    private void setUpCalendarSelected(){
+        binding.fieldDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setUpCalendar();
             }
         });
     }
@@ -129,4 +166,6 @@ public class ExpenseFragment extends Fragment {
         );
         dialog.show();
     }
+
+
 }

@@ -12,4 +12,6 @@
     <color name="box_background_color_2">#edf7fc</color>
     <color name="hint_text_color">#6f8d96</color>
     <color name="item_background">#D3D3D3</color>
+    <color name="amount">#D2042D</color>
+
 </resources>
