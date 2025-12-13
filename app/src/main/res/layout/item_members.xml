@@ -6,7 +6,7 @@
     android:layout_marginTop="@dimen/large">
 
     <ImageView
-        android:id="@+id/imgAvatar"
+        android:id="@+id/imgItemAvatar"
         android:layout_width="@dimen/super_large_lv2"
         android:layout_height="@dimen/super_large_lv2"
         android:background="@drawable/boder_avatar"
@@ -20,19 +20,20 @@
         android:layout_marginStart="@dimen/small">
 
         <TextView
-            android:id="@+id/tvName"
+            android:id="@+id/tvItemName"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            style="@style/TextBody1.2"/>
+
+        <TextView
+            android:id="@+id/tvItemAddress"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1" />
 
         <TextView
-            android:id="@+id/tvAge"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <TextView
-            android:id="@+id/tvPhone"
+            android:id="@+id/tvItemPhone"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1" />

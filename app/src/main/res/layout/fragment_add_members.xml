@@ -38,7 +38,7 @@
 
     <com.google.android.material.button.MaterialButton
         style="@style/TextButton"
-        android:id="@+id/btnAdd"
+        android:id="@+id/btnSelectImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingVertical="@dimen/small"
@@ -60,6 +60,7 @@
         app:cardBackgroundColor="@color/box_background_color"
         app:cardCornerRadius="@dimen/corner_radius_home">
             <EditText
+                android:id="@+id/edtName"
                 style="@style/TextInsideSearchBox"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/height_search_box"
@@ -84,6 +85,7 @@
         app:cardBackgroundColor="@color/box_background_color"
         app:cardCornerRadius="@dimen/corner_radius_home">
         <EditText
+            android:id="@+id/edtYob"
             style="@style/TextInsideSearchBox"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_search_box"
@@ -109,6 +111,7 @@
         app:cardBackgroundColor="@color/box_background_color"
         app:cardCornerRadius="@dimen/corner_radius_home">
         <EditText
+            android:id="@+id/edtAddress"
             style="@style/TextInsideSearchBox"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_search_box"
@@ -176,6 +179,7 @@
         app:cardBackgroundColor="@color/box_background_color"
         app:cardCornerRadius="@dimen/corner_radius_home">
         <EditText
+            android:id="@+id/edtPhone"
             style="@style/TextInsideSearchBox"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_search_box"
@@ -201,6 +205,7 @@
         app:cardBackgroundColor="@color/box_background_color"
         app:cardCornerRadius="@dimen/corner_radius_home">
         <EditText
+            android:id="@+id/edtEmail"
             style="@style/TextInsideSearchBox"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_search_box"
@@ -213,6 +218,7 @@
             android:textColorHint="@color/hint_text_color" />
     </androidx.cardview.widget.CardView>
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAdd"
         style="@style/TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

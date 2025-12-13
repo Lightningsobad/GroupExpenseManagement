@@ -21,6 +21,8 @@
     <string name="chart_of_expense">Expense chart</string>
     <string name="create_introduction_1">Let\'s start by creating a new group </string>
     <string name="create_introduction_2">Create your new group and start managing group spend efficiently and transparently. </string>
+    <string name="welcome_1">Welcome to Expense Management App</string>
+    <string name="welcome_2">We hope to provide the best expense management solution for your team. Thank you very much.</string>
     <string name="btn_create">+ CREATE A NEW GROUP</string>
     <string name="create_group">Create Your New Group</string>
     <string name="form_group_name">Group name: </string>
@@ -29,6 +31,7 @@
     <string name="hint_group_founding">dd/mm/yyyy</string>\
     <string name="btn_add_member">+ ADD A MEMBER</string>
     <string name="btn_complete">COMPLETE</string>
+    <string name="btn_start">LET\'S START NOW</string>
     <string name="btn_add">ADD</string>
     <string name="btn_back">BACK</string>
     <string name="add_a_member">Add a member</string>
@@ -91,6 +94,7 @@
     <string name="holiday">Holiday</string>
     <string name="submit_btn">SUBMIT</string>
     <string name="delete_btn">DELETE</string>
+    <string name="delete_btn_2">Delete</string>
 
     <string name="title_detail_transaction">Statistics</string>
     <string name="list_of_expenses">List of expenses for the month</string>
@@ -100,6 +104,7 @@
     <string name="expense_report">Report on monthly expenses</string>
     <string name="export_report">Export</string>
     <string name="total_expenses">Total of expenses: </string>
+
 
 
 </resources>

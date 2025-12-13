@@ -47,7 +47,7 @@ public class ExpenseDayAdapter extends RecyclerView.Adapter<ExpenseDayAdapter.Da
         holder.tvDate.setText(sdf.format(data.getDate()));
 
         holder.rvExpenseItems.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));
-        ExpenseItemAdapter adapter = new ExpenseItemAdapter(data.getExpenseList(),  listener);
+        ExpenseItemAdapter adapter = new ExpenseItemAdapter(data.getExpenseList(), listener);
         holder.rvExpenseItems.setAdapter(adapter);
     }
 

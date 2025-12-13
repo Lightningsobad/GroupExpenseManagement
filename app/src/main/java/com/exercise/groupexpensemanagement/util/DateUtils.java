@@ -42,11 +42,9 @@ public class DateUtils {
 
     public static String convertToServerDate(String inputDate) {
         try {
-            // Bước 1: Parse từ format người dùng nhập dd/MM/yyyy
             SimpleDateFormat inputFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
             Date date = inputFormat.parse(inputDate);
 
-            // Bước 2: Format sang chuẩn API yyyy-MM-dd'T'HH:mm:ss
             SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
             return outputFormat.format(date);
 

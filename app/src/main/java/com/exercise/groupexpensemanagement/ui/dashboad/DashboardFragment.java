@@ -64,8 +64,9 @@ public class DashboardFragment extends Fragment {
         mainScreenViewModel.getGroup().observe(getViewLifecycleOwner(), group -> {
             binding.tvGroupName.setText(group.getName());
             binding.tvTotalMembers.setText(String.valueOf(group.getMembers().size()));
-            binding.tvTotalFund.setText(String.valueOf(calculateTotalFundRemaining(group)));
-            binding.tvDateClosing.setText(DateUtils.format(getNearestClosingDate(group.getFunds().get(0).getFundClosings())));
+            binding.tvTotalFund.setText(
+               group.getFunds().get(0).getFundClosings().isEmpty() ? "-" : String.valueOf(calculateTotalFundRemaining(group)));
+            binding.tvDateClosing.setText(group.getFunds().get(0).getFundClosings().isEmpty() ? "-" : DateUtils.format(getNearestClosingDate(group.getFunds().get(0).getFundClosings())));
         });
     }
 
@@ -85,7 +86,6 @@ public class DashboardFragment extends Fragment {
 
     public Date getNearestClosingDate(List<FundClosing> list) {
         Date today = new Date();
-
         return list.stream()
                 .map(FundClosing::getDate)
                 .filter(d -> d != null && !d.after(today))
@@ -94,7 +94,6 @@ public class DashboardFragment extends Fragment {
     }
 
     private int calculateTotalExpense(Group group) {
-
         if(group.getExpenses().isEmpty())
             return 0;
         int totalExpense = group.getExpenses().stream().mapToInt(Expense::getMoney).sum();
@@ -104,6 +103,12 @@ public class DashboardFragment extends Fragment {
 
     private void updatepieChartExpenseAndFund() {
         mainScreenViewModel.getGroup().observe(getViewLifecycleOwner(), group -> {
+            if (group.getExpenses().isEmpty() && group.getFunds().get(0).getFundClosings().isEmpty()) {
+                binding.pieChartExpenseAndFund.clear();
+                binding.pieChartExpenseAndFund.setNoDataText("No data for this");
+                binding.pieChartExpenseAndFund.invalidate();
+                return;
+            }
             Map<String, Integer> categoryMap = new HashMap<>();
             categoryMap.put("Expense", calculateTotalExpense(group));
             categoryMap.put("Fund remaining", calculateTotalFund(group) - calculateTotalExpense(group));

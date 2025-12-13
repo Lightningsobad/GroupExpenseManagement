@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/super_large"
+    android:paddingTop="@dimen/large"
     android:paddingHorizontal="@dimen/medium">
 
     <LinearLayout
@@ -34,11 +34,11 @@
         android:background="@drawable/boder_avatar"
         android:src="@drawable/default_avatar"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/medium"/>
+        android:layout_marginTop="@dimen/small"/>
 
     <com.google.android.material.button.MaterialButton
         style="@style/TextButton"
-        android:id="@+id/btnAdd"
+        android:id="@+id/btnSelectImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingVertical="@dimen/small"
@@ -53,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/name"
-        android:layout_marginTop="@dimen/medium"
+        android:layout_marginTop="@dimen/medium_tiny"
         style="@style/TextBody1"/>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -61,6 +61,7 @@
         app:cardBackgroundColor="@color/box_background_color"
         app:cardCornerRadius="@dimen/corner_radius_home">
         <EditText
+            android:id="@+id/edtName"
             style="@style/TextInsideSearchBox"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_search_box"
@@ -85,6 +86,7 @@
         app:cardBackgroundColor="@color/box_background_color"
         app:cardCornerRadius="@dimen/corner_radius_home">
         <EditText
+            android:id="@+id/edtYob"
             style="@style/TextInsideSearchBox"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_search_box"
@@ -109,6 +111,7 @@
         app:cardBackgroundColor="@color/box_background_color"
         app:cardCornerRadius="@dimen/corner_radius_home">
         <EditText
+            android:id="@+id/edtAddress"
             style="@style/TextInsideSearchBox"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_search_box"
@@ -175,6 +178,7 @@
         app:cardBackgroundColor="@color/box_background_color"
         app:cardCornerRadius="@dimen/corner_radius_home">
         <EditText
+            android:id="@+id/edtPhone"
             style="@style/TextInsideSearchBox"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_search_box"
@@ -199,6 +203,7 @@
         app:cardBackgroundColor="@color/box_background_color"
         app:cardCornerRadius="@dimen/corner_radius_home">
         <EditText
+            android:id="@+id/edtEmail"
             style="@style/TextInsideSearchBox"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_search_box"
@@ -209,19 +214,43 @@
             android:singleLine="true"
             android:text="nguyenthien95@gmail.com" />
     </androidx.cardview.widget.CardView>
-    <com.google.android.material.button.MaterialButton
-        style="@style/TextButton"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingVertical="@dimen/small"
-        android:paddingHorizontal="@dimen/large"
-        android:layout_gravity="right"
-        android:layout_marginTop="@dimen/small"
-        android:layout_marginBottom="@dimen/small"
-        android:text="@string/btn_confirm"
-        app:cornerRadius="@dimen/corner_radius_home" />
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/small">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnConfirm"
+            style="@style/TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/small"
+            android:paddingHorizontal="@dimen/large"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/small"
+            android:layout_marginBottom="@dimen/small"
+            android:text="@string/btn_confirm"
+            app:cornerRadius="@dimen/corner_radius_home" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDelete"
+            style="@style/TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/small"
+            android:paddingHorizontal="@dimen/large"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/small"
+            android:layout_marginBottom="@dimen/small"
+            android:backgroundTint="@color/amount"
+            android:text="@string/delete_btn_2"
+            app:cornerRadius="@dimen/corner_radius_home" />
 
 
-
+    </LinearLayout>
 
 </LinearLayout>

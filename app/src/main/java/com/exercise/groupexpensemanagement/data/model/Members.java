@@ -17,7 +17,7 @@ public class Members implements Serializable {
     @SerializedName("diaChi")
     private String address;
     @SerializedName("ngayVaoNhom")
-    private String entryDate;
+    private Date entryDate;
 
     @SerializedName("anhDaiDien")
     private String image;
@@ -70,11 +70,11 @@ public class Members implements Serializable {
         this.address = address;
     }
 
-    public String getEntryDate() {
+    public Date getEntryDate() {
         return entryDate;
     }
 
-    public void setEntryDate(String entryDate) {
+    public void setEntryDate(Date entryDate) {
         this.entryDate = entryDate;
     }
 

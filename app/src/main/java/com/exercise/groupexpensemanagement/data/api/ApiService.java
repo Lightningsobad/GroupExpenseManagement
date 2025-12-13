@@ -25,7 +25,7 @@ public interface ApiService {
     Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss").create();
 
     ApiService apiService = new Retrofit.Builder()
-            .baseUrl("http://192.168.1.165/qlct/api/")
+            .baseUrl("http://192.168.50.101/qlct/api/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
             .create(ApiService.class);
@@ -42,8 +42,14 @@ public interface ApiService {
     @GET("getUser")
     Call<User> getUser(@Query("username") String username, @Query("password") String password);
 
+    @POST("addUser")
+    Call<Boolean> addUser(@Query("username") String username, @Query("password") String password);
+
     @GET("group/getInfo")
     Call<Group> getGroup(@Query("id") int id);
+
+    @POST("group/add")
+    Call<Boolean> createGroup(@Query("userId") int userId, @Query("name") String name, @Query("date") String date);
 
     @POST("expense/add")
     Call<Boolean> addExpense(@Query("groupId") int groupId,
@@ -63,4 +69,21 @@ public interface ApiService {
     Call<Boolean> addFundClosing(@Query("fundId") int fundId,
                              @Query("name") String name, @Query("date") String date,
                              @Query("money") int money, @Query("note") String note);
+
+
+    @POST("member/add")
+    Call<Boolean> addMember(@Query("groupId") int groupId,
+                               @Query("name") String name, @Query("yob") int yob,
+                               @Query("address") String address, @Query("date") String date,
+                               @Query("image") String image, @Query("phone") String phone,
+                               @Query("email") String email);
+    @PUT("member/update")
+    Call<Boolean> updateMember(@Query("id") int id,
+                               @Query("name") String name, @Query("yob") int yob,
+                               @Query("address") String address, @Query("date") String date,
+                               @Query("image") String image, @Query("phone") String phone,
+                               @Query("email") String email);
+
+    @DELETE("member/delete")
+    Call<Boolean> deleteMember(@Query("id") int id);
 }

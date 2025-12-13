@@ -78,7 +78,9 @@ public class SignInFragment extends Fragment {
                         requireActivity().finish();
                     } else{
                         Intent intent = new Intent(getActivity(), CreateAGroupActivity.class);
-                        intent.putExtra("user_id", user.getMaNguoiDung());
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("user", user);
+                        intent.putExtras(bundle);
                         startActivity(intent);
                         requireActivity().finish();
                     }

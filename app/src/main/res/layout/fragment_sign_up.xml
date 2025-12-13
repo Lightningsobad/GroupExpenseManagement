@@ -92,7 +92,7 @@
 
     <com.google.android.material.button.MaterialButton
         style="@style/TextButton"
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnSignUp"
         android:layout_width="match_parent"
         android:layout_height="@dimen/super_large"
         android:paddingVertical="@dimen/small"

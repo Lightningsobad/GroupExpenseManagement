@@ -10,8 +10,7 @@
     </fragment>
 
     <fragment android:id="@+id/fragment_form_create" android:name="com.exercise.groupexpensemanagement.ui.creategroup.CreateAGroupFragment" tools:layout="@layout/fragment_create_a_new_group">
-        <action android:id="@+id/action_create_to_add_member" app:destination="@id/fragment_form_add_a_member"/>
+        <action android:id="@+id/action_create_to_welcome" app:destination="@id/fragment_welcome"/>
     </fragment>
-    <fragment android:id="@+id/fragment_form_add_a_member" android:name="com.exercise.groupexpensemanagement.ui.member_add.AddMemberFragment" tools:layout="@layout/fragment_add_members"/>
-
+    <fragment android:id="@+id/fragment_welcome" android:name="com.exercise.groupexpensemanagement.ui.welcome.WelcomeFragment" tools:layout="@layout/fragment_welcome"/>
 </navigation>
