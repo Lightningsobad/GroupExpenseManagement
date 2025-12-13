@@ -39,7 +39,7 @@ public class ExpenseItemAdapter extends RecyclerView.Adapter<ExpenseItemAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Expense e = list.get(position);
         holder.tvName.setText(e.getName());
-        holder.tvMoney.setText(String.valueOf(e.getMoney() * -1));
+        holder.tvMoney.setText(String.format("%,d", e.getMoney() * -1));
 
         holder.itemView.setOnClickListener(v -> {
             listener.onClick(e);

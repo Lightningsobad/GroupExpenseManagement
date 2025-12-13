@@ -13,11 +13,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.exercise.groupexpensemanagement.data.api.ApiService;
 import com.exercise.groupexpensemanagement.data.model.Expense;
 import com.exercise.groupexpensemanagement.databinding.FragmentEditExpenseBinding;
 import com.exercise.groupexpensemanagement.ui.main.MainScreenViewModel;
+import com.exercise.groupexpensemanagement.ui.member_edit.EditMemberFragment;
 import com.exercise.groupexpensemanagement.util.DateUtils;
 
 import java.util.Calendar;
@@ -63,6 +65,7 @@ public class EditExpenseFragment extends Fragment {
                             if(isSuccess){
                                 Toast.makeText(getContext(), "Delete successfully!", Toast.LENGTH_SHORT).show();
                                 mainScreenViewModel.updateGroup(groupId);
+                                NavHostFragment.findNavController(EditExpenseFragment.this).popBackStack();
                             } else{
                                 Toast.makeText(getContext(), "Delete failed!", Toast.LENGTH_SHORT).show();
                             }
@@ -94,6 +97,7 @@ public class EditExpenseFragment extends Fragment {
                             if(isSuccess){
                                 Toast.makeText(getContext(), "Information edited successfully!", Toast.LENGTH_SHORT).show();
                                 mainScreenViewModel.updateGroup(groupId);
+                                NavHostFragment.findNavController(EditExpenseFragment.this).popBackStack();
                             } else{
                                 Toast.makeText(getContext(), "Information edited failed!", Toast.LENGTH_SHORT).show();
                             }

@@ -59,13 +59,13 @@ public class DashboardFragment extends Fragment {
     }
 
 
-
+    //String.format("%,d VNĐ", 0)
     private void updateDashboardInfomation() {
         mainScreenViewModel.getGroup().observe(getViewLifecycleOwner(), group -> {
             binding.tvGroupName.setText(group.getName());
             binding.tvTotalMembers.setText(String.valueOf(group.getMembers().size()));
             binding.tvTotalFund.setText(
-               group.getFunds().get(0).getFundClosings().isEmpty() ? "-" : String.valueOf(calculateTotalFundRemaining(group)));
+               group.getFunds().get(0).getFundClosings().isEmpty() ? "-" : String.format("%,d VNĐ", calculateTotalFundRemaining(group)));
             binding.tvDateClosing.setText(group.getFunds().get(0).getFundClosings().isEmpty() ? "-" : DateUtils.format(getNearestClosingDate(group.getFunds().get(0).getFundClosings())));
         });
     }
