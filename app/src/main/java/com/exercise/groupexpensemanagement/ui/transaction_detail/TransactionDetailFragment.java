@@ -18,6 +18,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.exercise.groupexpensemanagement.R;
 import com.exercise.groupexpensemanagement.data.model.Expense;
 import com.exercise.groupexpensemanagement.data.model.ExpenseGroupByDate;
+import com.exercise.groupexpensemanagement.data.model.FundClosing;
+import com.exercise.groupexpensemanagement.data.model.TransactionItem;
 import com.exercise.groupexpensemanagement.databinding.FragmentDetailTransactionBinding;
 import com.exercise.groupexpensemanagement.ui.edit_expense.EditExpenseFragment;
 import com.exercise.groupexpensemanagement.ui.main.MainScreenViewModel;
@@ -26,6 +28,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -35,6 +38,7 @@ public class TransactionDetailFragment extends Fragment {
 
     FragmentDetailTransactionBinding binding;
     private List<Expense> allExpenses = new ArrayList<>();
+    private List<FundClosing> allFundClosing = new ArrayList<>();
     private ExpenseDayAdapter adapter;
 
     private MainScreenViewModel mainScreenViewModel;
@@ -63,10 +67,8 @@ public class TransactionDetailFragment extends Fragment {
             // month trả về 0–11 → +1
             int selectedMonth = month + 1;
             int selectedYear = year;
-
             currentMonth = selectedMonth;
             currentYear = selectedYear;
-
             updateList();   // gọi lại để lọc danh sách theo tháng mới
         });
     }
@@ -74,6 +76,7 @@ public class TransactionDetailFragment extends Fragment {
     private void loadAllExpense() {
         mainScreenViewModel.getGroup().observe(getViewLifecycleOwner(), group -> {
             allExpenses = group.getExpenses();
+            allFundClosing = group.getFunds().get(0).getFundClosings();
             Calendar c = Calendar.getInstance();
             currentMonth = c.get(Calendar.MONTH) + 1;
             currentYear = c.get(Calendar.YEAR);
@@ -82,66 +85,117 @@ public class TransactionDetailFragment extends Fragment {
     }
 
     private void updateList() {
-        List<ExpenseGroupByDate> result = groupExpenseByMonth(allExpenses, currentMonth, currentYear);
+        List<ExpenseGroupByDate> result = groupTransactionByMonth(allExpenses, allFundClosing, currentMonth, currentYear);
         adapter.updateList(result);
     }
 
     private void setUpRecycleView() {
-        adapter = new ExpenseDayAdapter(new ArrayList<>(), expense -> {
-            if (expense != null)
-                openEditExpenseFragment(expense);
+        adapter = new ExpenseDayAdapter(new ArrayList<>(), item -> {
+            if (item instanceof Expense) {
+                openEditExpenseFragment((Expense) item);
+            } else if (item instanceof FundClosing) {
+                openEditFundFragment((FundClosing) item);
+            }
+
         });
         binding.listOfItems.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.listOfItems.setAdapter(adapter);
     }
 
+    private void openEditFundFragment(FundClosing item) {
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("fund_closing_data", item);
+        NavController navController = Navigation.findNavController(requireView());
+        navController.navigate(R.id.action_detail_to_edit_fund, bundle);
+    }
+
     private void openEditExpenseFragment(Expense expense) {
         Bundle bundle = new Bundle();
         bundle.putSerializable("expense_data", expense);
-
         NavController navController = Navigation.findNavController(requireView());
         navController.navigate(R.id.action_detail_to_edit, bundle);
     }
 
-
-
-
-
-    private List<ExpenseGroupByDate> groupExpenseByMonth(List<Expense> all, int month, int year) {
+    private List<ExpenseGroupByDate> groupTransactionByMonth(
+            List<Expense> expenses,
+            List<FundClosing> funds,
+            int month,
+            int year) {
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        Map<String, List<TransactionItem>> map = new HashMap<>();
 
-        // 1. Lọc theo tháng
-        List<Expense> filtered = all.stream()
-                .filter(e -> {
-                    Calendar c = Calendar.getInstance();
-                    c.setTime(e.getDateBegin());
-                    return (c.get(Calendar.MONTH) + 1 == month &&
-                            c.get(Calendar.YEAR) == year);
-                })
-                .collect(Collectors.toList());
-
-        // 2. Gom theo ngày
-        Map<String, List<Expense>> grouped = filtered.stream()
-                .collect(Collectors.groupingBy(e -> sdf.format(e.getDateBegin())));
-
-        // 3. Convert Map → List<ExpenseGroupByDate>
-        List<ExpenseGroupByDate> result = new ArrayList<>();
-        for (String day : grouped.keySet()) {
-            Date date;
-            try {
-                date = sdf.parse(day);
-            } catch (Exception ex) {
-                continue;
+        // Expense
+        for (Expense e : expenses) {
+            Calendar c = Calendar.getInstance();
+            c.setTime(e.getDateBegin());
+            if (c.get(Calendar.MONTH) + 1 == month && c.get(Calendar.YEAR) == year) {
+                String key = sdf.format(e.getDateBegin());
+                map.computeIfAbsent(key, k -> new ArrayList<>()).add(e);
             }
-            result.add(new ExpenseGroupByDate(date, grouped.get(day)));
         }
 
-        // Sort giảm dần theo ngày (mới nhất → cũ)
-        result.sort((a, b) -> b.getDate().compareTo(a.getDate()));
+        // Fund
+        for (FundClosing f : funds) {
+            Calendar c = Calendar.getInstance();
+            c.setTime(f.getDate());
+            if (c.get(Calendar.MONTH) + 1 == month && c.get(Calendar.YEAR) == year) {
+                String key = sdf.format(f.getDate());
+                map.computeIfAbsent(key, k -> new ArrayList<>()).add(f);
+            }
+        }
 
+        List<ExpenseGroupByDate> result = new ArrayList<>();
+        for (String key : map.keySet()) {
+            try {
+                result.add(new ExpenseGroupByDate(sdf.parse(key), map.get(key)));
+            } catch (Exception ignored) {}
+        }
+
+        result.sort((a, b) -> b.getDate().compareTo(a.getDate()));
         return result;
     }
+
+
+
+
+
+
+//    private List<ExpenseGroupByDate> groupExpenseByMonth(List<Expense> all, int month, int year) {
+//
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+//
+//        // 1. Lọc theo tháng
+//        List<Expense> filtered = all.stream()
+//                .filter(e -> {
+//                    Calendar c = Calendar.getInstance();
+//                    c.setTime(e.getDateBegin());
+//                    return (c.get(Calendar.MONTH) + 1 == month &&
+//                            c.get(Calendar.YEAR) == year);
+//                })
+//                .collect(Collectors.toList());
+//
+//        // 2. Gom theo ngày
+//        Map<String, List<Expense>> grouped = filtered.stream()
+//                .collect(Collectors.groupingBy(e -> sdf.format(e.getDateBegin())));
+//
+//        // 3. Convert Map → List<ExpenseGroupByDate>
+//        List<ExpenseGroupByDate> result = new ArrayList<>();
+//        for (String day : grouped.keySet()) {
+//            Date date;
+//            try {
+//                date = sdf.parse(day);
+//            } catch (Exception ex) {
+//                continue;
+//            }
+//            result.add(new ExpenseGroupByDate(date, grouped.get(day)));
+//        }
+//
+//        // Sort giảm dần theo ngày (mới nhất → cũ)
+//        result.sort((a, b) -> b.getDate().compareTo(a.getDate()));
+//
+//        return result;
+//    }
 
 
 

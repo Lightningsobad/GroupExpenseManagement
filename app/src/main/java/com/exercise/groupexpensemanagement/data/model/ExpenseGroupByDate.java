@@ -5,18 +5,18 @@ import java.util.List;
 
 public class ExpenseGroupByDate {
     private Date date;
-    private List<Expense> expenseList;
+    private List<TransactionItem> items;
 
-    public ExpenseGroupByDate(Date date, List<Expense> expenseList) {
+    public ExpenseGroupByDate(Date date, List<TransactionItem> items) {
         this.date = date;
-        this.expenseList = expenseList;
+        this.items = items;
     }
 
     public Date getDate() {
         return date;
     }
 
-    public List<Expense> getExpenseList() {
-        return expenseList;
+    public List<TransactionItem> getExpenseList() {
+        return items;
     }
 }

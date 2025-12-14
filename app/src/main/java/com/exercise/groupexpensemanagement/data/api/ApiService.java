@@ -70,6 +70,14 @@ public interface ApiService {
                              @Query("name") String name, @Query("date") String date,
                              @Query("money") int money, @Query("note") String note);
 
+    @PUT("fund/update")
+    Call<Boolean> updateFundClosing(@Query("fundId") int id,
+                                @Query("name") String name, @Query("date") String date,
+                                @Query("money") int money, @Query("note") String note);
+
+    @DELETE("fund/delete")
+    Call<Boolean> deleteFundClosing(@Query("id") int id);
+
 
     @POST("member/add")
     Call<Boolean> addMember(@Query("groupId") int groupId,

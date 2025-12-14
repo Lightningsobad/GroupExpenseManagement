@@ -8,20 +8,23 @@
     <fragment android:id="@+id/fragment_dashboard" android:name="com.exercise.groupexpensemanagement.ui.dashboad.DashboardFragment" tools:layout="@layout/fragment_dashboard"/>
     <fragment android:id="@+id/fragment_member" android:name="com.exercise.groupexpensemanagement.ui.member.MemberFragment" tools:layout="@layout/fragment_member">
         <action android:id="@+id/action_list_to_add" app:destination="@id/fragment_form_add_a_member"/>
-        <action android:id="@+id/action_list_to_detail" app:destination="@id/fragment_detail_member"/>
         <action android:id="@+id/action_list_to_edit" app:destination="@id/fragment_edit_member"/>
     </fragment>
     <fragment android:id="@+id/fragment_input_transaction" android:name="com.exercise.groupexpensemanagement.ui.transaction_input.TransactionFragment" tools:layout="@layout/fragment_input_transaction"/>
     <fragment android:id="@+id/fragment_statistical" android:name="com.exercise.groupexpensemanagement.ui.transaction_detail.TransactionDetailFragment" tools:layout="@layout/fragment_detail_transaction">
         <action android:id="@+id/action_detail_to_edit" app:destination="@+id/fragment_edit_expense"/>
+        <action android:id="@+id/action_detail_to_edit_fund" app:destination="@id/fragment_edit_fund"/>
     </fragment>
     <fragment android:id="@+id/fragment_report" android:name="com.exercise.groupexpensemanagement.ui.report.ReportFragment" tools:layout="@layout/fragment_report"/>
 
     <fragment android:id="@+id/fragment_form_add_a_member" android:name="com.exercise.groupexpensemanagement.ui.member_add.AddMemberFragment" tools:layout="@layout/fragment_add_members"/>
-    <fragment android:id="@+id/fragment_detail_member" android:name="com.exercise.groupexpensemanagement.ui.member_info.MemberInfoFragment" tools:layout="@layout/fragment_detail_member_info"/>
     <fragment android:id="@+id/fragment_edit_member" android:name="com.exercise.groupexpensemanagement.ui.member_edit.EditMemberFragment" tools:layout="@layout/fragment_edit_member"/>
     <fragment
         android:id="@+id/fragment_edit_expense"
         android:name="com.exercise.groupexpensemanagement.ui.edit_expense.EditExpenseFragment"
         tools:layout="@layout/fragment_edit_expense" />
+    <fragment
+        android:id="@+id/fragment_edit_fund"
+        android:name="com.exercise.groupexpensemanagement.ui.edit_fund.EditFundFragment"
+        tools:layout="@layout/fragment_edit_fund"/>
 </navigation>

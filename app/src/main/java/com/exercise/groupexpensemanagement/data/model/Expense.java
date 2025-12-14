@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Expense implements Serializable {
+public class Expense implements Serializable, TransactionItem {
     @SerializedName("maSuKienChiTieu")
     private int id;
     @SerializedName("maNhom")
@@ -80,5 +80,15 @@ public class Expense implements Serializable {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    @Override
+    public String getTitle() {
+        return getName();
+    }
+
+    @Override
+    public int getAmount() {
+        return getMoney() * -1;
     }
 }

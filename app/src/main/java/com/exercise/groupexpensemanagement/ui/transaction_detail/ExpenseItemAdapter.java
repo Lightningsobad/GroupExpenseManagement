@@ -1,5 +1,6 @@
 package com.exercise.groupexpensemanagement.ui.transaction_detail;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,19 +11,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.exercise.groupexpensemanagement.R;
 import com.exercise.groupexpensemanagement.data.model.Expense;
+import com.exercise.groupexpensemanagement.data.model.TransactionItem;
 
 import java.util.List;
 
 public class ExpenseItemAdapter extends RecyclerView.Adapter<ExpenseItemAdapter.ViewHolder> {
 
-    private List<Expense> list;
+    private List<TransactionItem> list;
     private OnExpenseClickListener listener;
 
     public interface OnExpenseClickListener {
-        void onClick(Expense expense);
+        void onClick(TransactionItem expense);
     }
 
-    public ExpenseItemAdapter(List<Expense> list, OnExpenseClickListener listener) {
+    public ExpenseItemAdapter(List<TransactionItem> list, OnExpenseClickListener listener) {
         this.list = list;
         this.listener = listener;
     }
@@ -37,9 +39,14 @@ public class ExpenseItemAdapter extends RecyclerView.Adapter<ExpenseItemAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Expense e = list.get(position);
-        holder.tvName.setText(e.getName());
-        holder.tvMoney.setText(String.format("%,d", e.getMoney() * -1));
+        TransactionItem e = list.get(position);
+        holder.tvName.setText(e.getTitle());
+        int money = e.getAmount();
+        holder.tvMoney.setText(String.format("%,d", money));
+
+        holder.tvMoney.setTextColor(
+                money >= 0 ? Color.BLUE : Color.RED
+        );
 
         holder.itemView.setOnClickListener(v -> {
             listener.onClick(e);

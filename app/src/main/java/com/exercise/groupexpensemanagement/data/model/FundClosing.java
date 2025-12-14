@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.util.Date;
 
-public class FundClosing implements Serializable {
+public class FundClosing implements Serializable, TransactionItem {
     @SerializedName("maDotDongQuy")
     private int id;
     @SerializedName("maQuy")
@@ -22,7 +22,17 @@ public class FundClosing implements Serializable {
     public FundClosing() {
     }
 
+    public String getNote() {
+        return note;
+    }
 
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public void setMoneyForEachPerson(Integer moneyForEachPerson) {
+        this.moneyForEachPerson = moneyForEachPerson;
+    }
 
     public int getId() {
         return id;
@@ -62,5 +72,15 @@ public class FundClosing implements Serializable {
 
     public void setMoneyForEachPerson(int moneyForEachPerson) {
         this.moneyForEachPerson = moneyForEachPerson;
+    }
+
+    @Override
+    public String getTitle() {
+        return getName();
+    }
+
+    @Override
+    public int getAmount() {
+        return getMoneyForEachPerson();
     }
 }
