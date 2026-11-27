@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "56529823179",
+    "project_id": "groupexpensemanagement",
+    "storage_bucket": "groupexpensemanagement.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:56529823179:android:15370c8aaa74f579a0424e",
+        "android_client_info": {
+          "package_name": "com.exercise.groupexpensemanagement"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdz2VL10Z4DitUQy1Fs1sC52jm7PmtpJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
